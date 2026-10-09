@@ -1,17 +1,19 @@
 import 'dart:io';
 import 'package:exemplo/exemplo.dart';
 
-
 const String version = '0.0.1';
 
 void main(List<String> arguments) {
-  List<Map<String,dynamic>> opcoes = [];
-  
+  List<Map<String, dynamic>> opcoes = [];
+
   // Exemplos de usuários com permissões diferentes
   // TODO: Importar a classe Usuario do pacote implementado pelo Grupo 1.
   // Estou usando um Map para simular a classe Usuario, mas você deve usar a classe real.
   Map<String, dynamic> usuario1 = {'nome': 'Fulano', 'permissoes': []};
-  Map<String, dynamic> usuario2 = {'nome': 'Beltrano', 'permissoes': ['admin']};
+  Map<String, dynamic> usuario2 = {
+    'nome': 'Beltrano',
+    'permissoes': ['admin'],
+  };
 
   // Usuário logado
   // TODO: Você deve adaptar isso para usar a classe Usuario real.
@@ -38,8 +40,8 @@ void main(List<String> arguments) {
     } else if (escolha != null && escolha >= 0 && escolha < opcoes.length) {
       // Se é necessária uma permissão e o usuário não tem, exibe mensagem de
       // acesso negado e continua o loop
-      // TODO: Você deve adaptar a condição do if abaixo à classe Usuario real.
-      if (opcoes[escolha]['permissao'] != null && 
+      // : Você deve adaptar a condição do if abaixo à classe Usuario real.
+      if (opcoes[escolha]['permissao'] != null &&
           !usuario['permissoes'].contains(opcoes[escolha]['permissao'])) {
         print('Acesso negado. Você não tem permissão para fazer isso.\n');
         continue;
