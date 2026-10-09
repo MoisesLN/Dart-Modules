@@ -11,6 +11,12 @@ class AulasBase {
     { 'titulo': 'Excluir aula', 'permissao': 'professor', 'metodo': excluir },
     { 'titulo': 'Listar aula', 'permissao': null, 'metodo': listar},
     { 'titulo': 'Editar aula', 'permissao': 'professor', 'metodo': editar},
+
+    { 'titulo': 'Listar todas as disciplinas cadastradas', 'permissao': null, 'metodo': listar },
+    { 'titulo': 'Cadastrar disciplina', 'permissao': 'professor', 'metodo': cadastrar },
+    { 'titulo': 'Excluir disciplina', 'permissao': 'professor', 'metodo': excluir },
+    { 'titulo': 'Listar disciplina', 'permissao': null, 'metodo': listar},
+    { 'titulo': 'Editar disciplina', 'permissao': 'professor', 'metodo': editar},
   ];
 
   static final List<String> informacoes = [];
@@ -45,6 +51,25 @@ class AulasBase {
     if (index != null && index >= 0 && index < informacoes.length) {
       informacoes.removeAt(index);
       print('Informação excluída com sucesso.');
+    } else {
+      print('Informação não encontrada.');
+    }
+  }
+
+  static void editar(List<String> informacoes) {
+  print('Digite o índice da informação que deseja editar:');
+
+    String? input = stdin.readLineSync() ?? '';
+    int? index = int.tryParse(input);
+
+    if (index != null && index >= 0 && index < informacoes.length) {
+      print('Digite a nova informação:');
+
+      String novaInformacao = stdin.readLineSync() ?? '';
+
+      informacoes[index] = novaInformacao;
+
+      print('Informação editada com sucesso.');
     } else {
       print('Informação não encontrada.');
     }
