@@ -12,6 +12,10 @@ dependencies:
   args: ^2.7.0
   exemplo:
     path:  exemplo
+  aulas:
+    path: aulas
+  usuarios:
+    path: usuarios
 
 dev_dependencies:
   lints: ^6.0.0
