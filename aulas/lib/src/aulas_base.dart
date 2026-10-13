@@ -1,10 +1,7 @@
 import 'dart:io';
 
-/// Módulo exemplo.
-/// TODO: Adapte para algo específico do seu módulo.
-class AulasBase {
-  /// Menu de opções do módulo exemplo.
-  /// TODO: Adapte ao seu módulo, mas mantenha o nome da propriedade como `menu` para que o código do binário funcione corretamente.
+class AulasManager {
+  /// Não mudar o nome 'menu'
   static List<Map<String, dynamic>> menu = [
     { 'titulo': 'Listar todas as aulas cadastradas', 'permissao': null, 'metodo': listar },
     { 'titulo': 'Cadastrar aula', 'permissao': 'professor', 'metodo': cadastrar },
