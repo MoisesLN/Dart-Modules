@@ -1,27 +1,20 @@
-
-
-import 'dart:ffi';
-import 'dart:io';
-
 class Disciplina {
-  Disciplina(
-    this.id,
-    this.nome,
-    this.professor,
-    this.alunos_matriculados,
-    this.aulas,
-    this.carga_horaria,
-    this.horario,
-    this.local,
-  );
-
-  final Int id;
+  final int id;
   final String nome;
-  final dynamic professor;
-  final List<dynamic> alunos_matriculados;
-  final List<dynamic> aulas;
-  final Int carga_horaria;
-  final HttpDate horario;
+  final String professor;
+  final List<String> alunosMatriculados;
+  final List<String> aulas;
+  final int cargaHoraria;
   final String local;
 
+  Disciplina({
+    required this.id,
+    required this.nome,
+    required this.professor,
+    List<String>? alunosMatriculados,
+    List<String>? aulas,
+    required this.cargaHoraria,
+    required this.local,
+  })  : alunosMatriculados = alunosMatriculados ?? [],
+        aulas = aulas ?? [];
 }
